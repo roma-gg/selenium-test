@@ -2,12 +2,10 @@ package com.cydeo.tests.shorts;
 
 import com.cydeo.tests.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Selenium_RadioButtons {
     public static void main(String[] args) {
-        var driver = WebDriverFactory.getDriver();
+        var driver = WebDriverFactory.getChromeDriver();
         driver.get("https://practice.cydeo.com/radio_buttons");
         WebDriverFactory.sync5sec(driver);
 
