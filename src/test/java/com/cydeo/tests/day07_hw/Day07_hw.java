@@ -1,8 +1,10 @@
 package com.cydeo.tests.day07_hw;
 
 import com.cydeo.tests.utilities.BrowserUtils;
+import com.cydeo.tests.utilities.CRM_Utilities;
 import com.cydeo.tests.utilities.ConfigReader;
 import com.cydeo.tests.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -22,6 +24,11 @@ public class Day07_hw {
         ((JavascriptExecutor) driver).executeScript("window.open('https://facebook.com','_blank');");
 
         BrowserUtils.switchWindowAndVerify(driver, "amazon", "Amazon");
+    }
+
+    @Test
+    public void verifyLogin() {
+        CRM_Utilities.logIn_CRM(driver);
     }
 
     @AfterClass
