@@ -8,18 +8,22 @@ import org.testng.asserts.SoftAssert;
 public class CydeoPracticeUtils {
 
     public static String getOrderDate(WebDriver driver, String customerName) {
-        var list = driver.findElements(By.xpath("//td[contains(text(), '" + customerName + "')]"));
+        var list = driver.findElements(
+                By.xpath("//td[.= '" + customerName + "')]"));
         Assert.assertEquals(list.size(), 1);
 
-        String actualOrderDate = list.get(0).findElement(By.xpath("following-sibling::td[3]")).getText();
+        String actualOrderDate = list.get(0).findElement(
+                By.xpath("following-sibling::td[3]")).getText();
         return actualOrderDate;
     }
 
     public static void orderVerify(WebDriver driver, String customerName, String expectedOrderDate) {
-        var list = driver.findElements(By.xpath("//td[contains(text(), '" + customerName + "')]"));
+        var list = driver.findElements(
+                By.xpath("//td[contains(text(), '" + customerName + "')]"));
         Assert.assertEquals(list.size(), 1);
 
-        String actualOrderDate = list.get(0).findElement(By.xpath("following-sibling::td[3]")).getText();
+        String actualOrderDate = list.get(0).findElement(
+                By.xpath("following-sibling::td[3]")).getText();
         Assert.assertEquals(actualOrderDate, expectedOrderDate);
     }
 
